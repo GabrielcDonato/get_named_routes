@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,7 +10,25 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
-      body: Container(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/inicial/page1");
+              },
+              child: const Text("Inicial"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/pagedontexist");
+              },
+              child: const Text("page not exist"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
