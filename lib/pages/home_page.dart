@@ -25,7 +25,13 @@ class HomePage extends StatelessWidget {
                 Get.toNamed("/pagedontexist");
               },
               child: const Text("page not exist"),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/sendParams");
+              },
+              child: const Text("Send params"),
+            ),
           ],
         ),
       ),

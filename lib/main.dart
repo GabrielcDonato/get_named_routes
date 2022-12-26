@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:named_routes/pages/inicial/inicial_page1.dart';
 import 'package:named_routes/pages/route_not_found/route_not_found_page.dart';
+import 'package:named_routes/pages/send_parameters/arguments_param_page.dart';
+import 'package:named_routes/pages/send_parameters/path_param_page.dart';
+import 'package:named_routes/pages/send_parameters/query_param_page.dart';
+import 'package:named_routes/pages/send_parameters/send_params_home_page.dart';
 
 import 'pages/home_page.dart';
 
@@ -39,6 +43,24 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: "/inicial/page1",
           page: () => const InicialPage1(),
+        ),
+        GetPage(
+          name: "/sendParams",
+          page: () => const SendParamsHomePage(),
+          children: [
+            GetPage(
+              name: "/arguments",
+              page: () => const ArgumentsParamPage(),
+            ),
+            GetPage(
+              name: "/pathParam/:name/jornadaGetX",
+              page: () => const PathParamPage(),
+            ),
+            GetPage(
+              name: "/queryParam",
+              page: () => const QueryParamPage(),
+            ),
+          ],
         ),
       ],
     );
