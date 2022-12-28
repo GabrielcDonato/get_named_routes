@@ -27,6 +27,11 @@ class MyApp extends StatelessWidget {
       //se eu deixar a home como / ele nunca vai cair no unknown route
       //pq ele entende q a rota padrão é a com /, por isso devemos especificar
       // basicamente a routa com somente a / é a rota principal.
+      routingCallback: (Routing? routing) {
+        debugPrint(routing?.previous);
+        debugPrint(routing?.current);
+      },
+
       unknownRoute: GetPage(
         name: "/404",
         page: () => const RouteNotFoundPage(),
